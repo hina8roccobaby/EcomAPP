@@ -72,25 +72,25 @@ const App = () => {
         {/* Public Routes */}
         <Route
           path="/login"
-          element={!isAuthenticated ? <Login /> : <Navigate to="/" replace />}
+          element={!isAuthenticated ? <Login /> : <Navigate to="/dashboard" replace />}
         />
         <Route
           path="/register"
-          element={!isAuthenticated ? <Register /> : <Navigate to="/" replace />}
+          element={!isAuthenticated ? <Register /> : <Navigate to="/dashboard" replace />}
         />
         <Route
           path="/forgot-password"
-          element={!isAuthenticated ? <ForgotPassword /> : <Navigate to="/" replace />}
+          element={!isAuthenticated ? <ForgotPassword /> : <Navigate to="/dashboard " replace />}
         />
         <Route
           path="/reset-password/:resetToken"
-          element={!isAuthenticated ? <ResetPassword /> : <Navigate to="/" replace />}
+          element={!isAuthenticated ? <ResetPassword /> : <Navigate to="/dashboard" replace />}
         />
-        <Route path="/landing" element={<LandingPage />} />
+        <Route path="/" element={<LandingPage />} />
 
         {/* Protected Routes */}
         <Route
-          path="/"
+          path="/dashboard/"
           element={isAuthenticated ? <Layout /> : <Navigate to="/login" replace />}
         >
           <Route index element={<Dashboard />} />
@@ -101,7 +101,7 @@ const App = () => {
         </Route>
 
         {/* Fallback Route */}
-        <Route path="*" element={<Navigate to="/" replace />} />
+        <Route path="*" element={<Navigate to="/dashboard" replace />} />
       </Routes>
     </Router>
   );
