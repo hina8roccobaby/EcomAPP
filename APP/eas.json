@@ -7,12 +7,14 @@
       "distribution": "internal",
       "android": {
         "buildType": "apk"
-      }
+      },
+      "ios": {}
     },
     "production": {
       "android": {
         "buildType": "apk"
-      }
+      },
+      "ios": {}
     }
   }
 }
